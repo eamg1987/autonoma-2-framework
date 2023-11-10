@@ -22,6 +22,7 @@ class Program
                     while (reader.Read())
                     {
                         Console.WriteLine(reader["nombres"].ToString());
+
                         Console.WriteLine(reader["apellidos"].ToString());
                         Console.WriteLine(reader["edad"].ToString());
                         Console.WriteLine(reader["sexo"].ToString());
