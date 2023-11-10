@@ -49,6 +49,23 @@ class Program
                     Console.WriteLine($"Email: {alumno.email}");
                     Console.WriteLine($"Telefono: {alumno.telefono}");
                 }
+                // Consulta numero 2 - solo dos columnas
+                var resultadoConsulta = context.Alumnos
+                    .Where(a => a.edad >= 18) // Filtro con WHERE
+                    .GroupBy(a => a.sexo)      // Agrupar por Sexo
+                    .Select(grupo => new
+                    {
+                        Sexo = grupo.Key,
+                        Cantidad = grupo.Count()
+                        // Puedes agregar más propiedades según tus necesidades
+                    })
+                    .ToList();
+
+                // Imprimir resultados
+                foreach (var resultado in resultadoConsulta)
+                {
+                    Console.WriteLine($"Sexo: {resultado.Sexo}, Cantidad: {resultado.Cantidad}");
+                }
             }
             catch (Exception ex)
             {
