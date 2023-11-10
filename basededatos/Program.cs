@@ -43,7 +43,7 @@ class Program
                 using (MySqlDataReader reader = cmd2.ExecuteReader())
                 {
                     Console.WriteLine("===============================================");
-                    Console.WriteLine("Consulta numero 2 todos los datos");
+                    Console.WriteLine("Consulta numero 2 seleccionando solo dos columnas ");
                     while (reader.Read())
                     {
                         Console.WriteLine("Nombres:  " + reader["nombres"].ToString());
