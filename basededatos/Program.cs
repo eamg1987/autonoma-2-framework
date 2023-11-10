@@ -36,7 +36,7 @@ class Program
                         Console.WriteLine("Telefono:  " + reader["telefono"].ToString());
                     }
                 }
-                //consulta numero 2 todos los datos
+                //Consulta numero 2 seleccionando solo dos columnas
                 string query2 = "SELECT nombres, apellidos FROM alumnos where edad >10";
                 MySqlCommand cmd2 = new MySqlCommand(query2, connection);
 
